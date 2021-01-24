@@ -29,9 +29,9 @@ const RegisterScreen = ({ navigation }) => {
 				secureTextEntry
 			/> */}
 			<FilledButton
-				onPress={async () => {
+				onPress={() => {
 					try {
-						createAccount(username);
+					    createAccount(username);
 					} catch (e) {
 						setError(e);
 					}

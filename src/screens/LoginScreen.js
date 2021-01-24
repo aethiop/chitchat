@@ -12,10 +12,8 @@ import Error from "../components/Error";
 import IconButton from "../components/IconButton";
 // use like
 const LoginScreen = ({ navigation }) => {
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
+	const [key, setKey] = useState("");
 	const { loginUser } = useContext(Authentication);
-	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 
 	return (
@@ -24,7 +22,7 @@ const LoginScreen = ({ navigation }) => {
 
 			<Title>Login</Title>
 			<Input
-				onChangeText={(text) => setUsername(text)}
+				onChangeText={(text) => setKey(text)}
 				placeholder={"Type your username..."}
 			/>
 			{/* <Input
@@ -35,14 +33,11 @@ const LoginScreen = ({ navigation }) => {
 			<FilledButton
 				onPress={async () => {
 					try {
-						setLoading(true);
-
-						loginUser(JSON.parse(username));
+						loginUser(JSON.parse(key));
 					} catch (e) {
 						console.log(e);
-						setError(e);
+						setError(e.Error);
 					}
-					setLoading(false);
 				}}
 			>
 				Login
@@ -57,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
 			>
 				Create an account...
 			</TextButton>
-			<Loading loading={loading} />
+
 		</AuthContainer>
 	);
 };

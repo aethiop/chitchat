@@ -51,6 +51,25 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+<array>
+  <string>Font/AntDesign.ttf</string>
+  <string>Font/Entypo.ttf</string>
+  <string>Font/EvilIcons.ttf</string>
+  <string>Font/Feather.ttf</string>
+  <string>Font/FontAwesome.ttf</string>
+  <string>Font/FontAwesome5_Brands.ttf</string>
+  <string>Font/FontAwesome5_Regular.ttf</string>
+  <string>Font/FontAwesome5_Solid.ttf</string>
+  <string>Font/Foundation.ttf</string>
+  <string>Font/Ionicons.ttf</string>
+  <string>Font/MaterialIcons.ttf</string>
+  <string>Font/MaterialCommunityIcons.ttf</string>
+  <string>Font/SimpleLineIcons.ttf</string>
+  <string>Font/Octicons.ttf</string>
+  <string>Font/Zocial.ttf</string>
+  <string>Font/Fontisto.ttf</string>
+</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

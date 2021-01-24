@@ -1,0 +1,47 @@
+{
+  "name": "chitchat",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "update:packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "*",
+    "@react-native-community/clipboard": "*",
+    "@react-native-community/masked-view": "*",
+    "@react-navigation/bottom-tabs": "^5.11.6",
+    "@react-navigation/native": "*",
+    "@react-navigation/stack": "*",
+    "buffer": "*",
+    "gun": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-get-random-values": "*",
+    "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*",
+    "react-native-vector-icons": "*",
+    "react-native-webview": "*",
+    "react-native-webview-crypto": "*",
+    "text-encoding": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/runtime": "*",
+    "@react-native-community/eslint-config": "*",
+    "babel-jest": "*",
+    "eslint": "*",
+    "jest": "*",
+    "metro-react-native-babel-preset": "*",
+    "react-test-renderer": "*"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

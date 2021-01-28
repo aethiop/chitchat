@@ -8,6 +8,7 @@ const Input = ({style, onPress, placeholder, ...props}) => {
     <TextInput
       {...props}
       placeholder={placeholder}
+      placeholderTextColor={'#a9a9a9'}
       style={[styles.input, style]}
       onPress={onPress}
     />
@@ -16,11 +17,11 @@ const Input = ({style, onPress, placeholder, ...props}) => {
 
 const styles = StyleSheet.create({
   input: {
-    width: '80%',
+    width: '70%',
     padding: 14,
     backgroundColor: '#D6D6D6',
     borderRadius: 28,
-    margin: 14,
+    margin: 5
   },
 });
 

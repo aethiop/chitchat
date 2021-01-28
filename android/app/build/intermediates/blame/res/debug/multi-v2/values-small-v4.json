@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "outputFile": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-2/files-2.1/50ea6f670de2a391a0a1ed5d50d49981/res/values-small-v4/values-small-v4.xml",
+                    "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/082ced4354309b607249d3ca946d2421/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

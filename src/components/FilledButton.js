@@ -13,7 +13,6 @@ const FilledButton = ({style, onPress, children}) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
     alignSelf: 'center',
     alignItems: 'center',
     backgroundColor: '#00E585',

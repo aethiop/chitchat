@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-2/files-2.1/d58242d717bb65d7fdcd634c5b3790ca/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/1d8167761e05259f14272f916fac8200/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

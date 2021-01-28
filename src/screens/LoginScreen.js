@@ -11,9 +11,12 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import IconButton from "../components/IconButton";
 // use like
+
+
 const LoginScreen = ({ navigation }) => {
 	const [key, setKey] = useState("");
-	const { loginUser } = useContext(Authentication);
+	const { login } = useContext(Authentication);
+	
 	const [error, setError] = useState("");
 
 	return (
@@ -23,17 +26,20 @@ const LoginScreen = ({ navigation }) => {
 			<Title>Login</Title>
 			<Input
 				onChangeText={(text) => setKey(text)}
-				placeholder={"Type your username..."}
+				placeholder={"Paste your key here..."}
 			/>
+			
 			{/* <Input
 				onChangeText={(text) => setPassword(text)}
 				placeholder={"Type your password..."}
 				secureTextEntry
 			/> */}
+			<Error>{error}</Error>
 			<FilledButton
 				onPress={async () => {
 					try {
-						loginUser(JSON.parse(key));
+						console.log("FROM LOGIN SCREEN: ", key);
+						login(JSON.parse(key));
 					} catch (e) {
 						console.log(e);
 						setError(e.Error);
@@ -42,7 +48,6 @@ const LoginScreen = ({ navigation }) => {
 			>
 				Login
 			</FilledButton>
-			<Error>{error}</Error>
 
 			<TextButton
 				onPress={() => {

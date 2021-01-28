@@ -1,0 +1,253 @@
+{
+    "$": undefined,
+    "back": {
+        "$": undefined,
+        "ask": [Function ask
+        ],
+        "dup": {
+            "check": [Function anonymous
+            ],
+            "drop": [Function anonymous
+            ],
+            "s": [Object
+            ],
+            "to": 546,
+            "track": [Function anonymous
+            ]
+        },
+        "graph": {
+            "chitchat": [Object
+            ],
+            "kkcxbgd1fXNe52rCJI7r": [Object
+            ],
+            "kkcxbgd201aPevfGMVey3uT": [Object
+            ],
+            "kkcxbgdc3DceOLaJAzDX": [Object
+            ]
+        },
+        "gun": undefined,
+        "mum": undefined,
+        "next": {
+            "chitchat": [Object
+            ],
+            "kkcxbgd1fXNe52rCJI7r": [Object
+            ],
+            "kkcxbgd201aPevfGMVey3uT": [Object
+            ],
+            "kkcxbgdc3DceOLaJAzDX": [Object
+            ],
+            "~NnBZUOKKuaOP_4SAA7nlILWPzuX_aPuyrAh8oG3rtsY.1r5XTAJj38wbH3KUmBkTmE2o8qKVkXZYPp0pCW6A_S0": [Circular
+            ]
+        },
+        "now": undefined,
+        "on": [Function onto
+        ],
+        "once": 11,
+        "opt": {
+            "WebSocket": [Function WebSocket
+            ],
+            "file": "radata",
+            "gap": 1,
+            "log": [Function anonymous
+            ],
+            "mesh": [Function mesh
+            ],
+            "pack": 419700000,
+            "peers": [Object
+            ],
+            "pid": "rP00P3JhS",
+            "prefix": "radata",
+            "store": [Function store
+            ],
+            "uuid": [Function anonymous
+            ],
+            "wire": [Function open
+            ]
+        },
+        "root": [Circular
+        ],
+        "sea": {
+            "own": [Object
+            ]
+        },
+        "stop": null,
+        "tag": {
+            "2fUu2ULqE": [Object
+            ],
+            "5y8klez4j6b": [Object
+            ],
+            "B51hkDnOv": [Object
+            ],
+            "Ngkk9j2Ac": [Object
+            ],
+            "ack": [Object
+            ],
+            "bye": [Object
+            ],
+            "create": [Object
+            ],
+            "get": [Object
+            ],
+            "hi": [Object
+            ],
+            "i0d4oqbeu3l": [Object
+            ],
+            "i3kfqkfy0ct": [Object
+            ],
+            "in": [Object
+            ],
+            "localStorage": [Object
+            ],
+            "out": [Object
+            ],
+            "put": [Object
+            ],
+            "qrMRZvwWO": [Object
+            ],
+            "u3OXFgRHM": [Object
+            ]
+        },
+        "user": undefined
+    },
+    "get": "~NnBZUOKKuaOP_4SAA7nlILWPzuX_aPuyrAh8oG3rtsY.1r5XTAJj38wbH3KUmBkTmE2o8qKVkXZYPp0pCW6A_S0",
+    "gun": undefined,
+    "id": 11,
+    "on": [Function onto
+    ],
+    "opt": {
+        "uuid": [Function anonymous
+        ]
+    },
+    "root": {
+        "$": undefined,
+        "ask": [Function ask
+        ],
+        "dup": {
+            "check": [Function anonymous
+            ],
+            "drop": [Function anonymous
+            ],
+            "s": [Object
+            ],
+            "to": 546,
+            "track": [Function anonymous
+            ]
+        },
+        "graph": {
+            "chitchat": [Object
+            ],
+            "kkcxbgd1fXNe52rCJI7r": [Object
+            ],
+            "kkcxbgd201aPevfGMVey3uT": [Object
+            ],
+            "kkcxbgdc3DceOLaJAzDX": [Object
+            ]
+        },
+        "gun": undefined,
+        "mum": undefined,
+        "next": {
+            "chitchat": [Object
+            ],
+            "kkcxbgd1fXNe52rCJI7r": [Object
+            ],
+            "kkcxbgd201aPevfGMVey3uT": [Object
+            ],
+            "kkcxbgdc3DceOLaJAzDX": [Object
+            ],
+            "~NnBZUOKKuaOP_4SAA7nlILWPzuX_aPuyrAh8oG3rtsY.1r5XTAJj38wbH3KUmBkTmE2o8qKVkXZYPp0pCW6A_S0": [Circular
+            ]
+        },
+        "now": undefined,
+        "on": [Function onto
+        ],
+        "once": 11,
+        "opt": {
+            "WebSocket": [Function WebSocket
+            ],
+            "file": "radata",
+            "gap": 1,
+            "log": [Function anonymous
+            ],
+            "mesh": [Function mesh
+            ],
+            "pack": 419700000,
+            "peers": [Object
+            ],
+            "pid": "rP00P3JhS",
+            "prefix": "radata",
+            "store": [Function store
+            ],
+            "uuid": [Function anonymous
+            ],
+            "wire": [Function open
+            ]
+        },
+        "root": [Circular
+        ],
+        "sea": {
+            "own": [Object
+            ]
+        },
+        "stop": null,
+        "tag": {
+            "2fUu2ULqE": [Object
+            ],
+            "5y8klez4j6b": [Object
+            ],
+            "B51hkDnOv": [Object
+            ],
+            "Ngkk9j2Ac": [Object
+            ],
+            "ack": [Object
+            ],
+            "bye": [Object
+            ],
+            "create": [Object
+            ],
+            "get": [Object
+            ],
+            "hi": [Object
+            ],
+            "i0d4oqbeu3l": [Object
+            ],
+            "i3kfqkfy0ct": [Object
+            ],
+            "in": [Object
+            ],
+            "localStorage": [Object
+            ],
+            "out": [Object
+            ],
+            "put": [Object
+            ],
+            "qrMRZvwWO": [Object
+            ],
+            "u3OXFgRHM": [Object
+            ]
+        },
+        "user": undefined
+    },
+    "sea": {
+        "epriv": "rCdo0h6w1Kz4xm2-iDNcRJMGLPzlo8_jL05RUUIv2Ws",
+        "epub": "DU5JbGMQ_LhXpYkhlh_3D_jFL0EGnR-YmvIiV0GlxNM.H-_WzJvWEW_7F7winp76yjSpRoFYmVPrmnYPFwOD_WU",
+        "priv": "YeKWngMOMtcQdioBLK-qyBFUXnHdNFG90XQF1SHK6CY",
+        "pub": "NnBZUOKKuaOP_4SAA7nlILWPzuX_aPuyrAh8oG3rtsY.1r5XTAJj38wbH3KUmBkTmE2o8qKVkXZYPp0pCW6A_S0"
+    },
+    "soul": "~NnBZUOKKuaOP_4SAA7nlILWPzuX_aPuyrAh8oG3rtsY.1r5XTAJj38wbH3KUmBkTmE2o8qKVkXZYPp0pCW6A_S0",
+    "tag": {
+        "in": {
+            "last": [Object
+            ],
+            "tag": "in",
+            "to": [Object
+            ]
+        },
+        "out": {
+            "last": [Object
+            ],
+            "tag": "out",
+            "to": [Object
+            ]
+        }
+    }
+}

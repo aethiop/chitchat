@@ -1,123 +1,34 @@
 import WebviewCrypto from 'react-native-webview-crypto';
 import 'react-native-get-random-values';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import React, {useMemo, useReducer, useState, useEffect} from 'react';
-import {View, StyleSheet, ActionSheetIOS} from 'react-native';
+import React, {useMemo, useEffect} from 'react';
+import {StyleSheet} from 'react-native';
 
-import Gun from 'gun/gun';
-import SEA from 'gun/sea';
 
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {Authentication} from './src/contexts/Authentication';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AuthNavigator} from './src/navigators/AuthNavigator';
 import { MainNavigator } from "./src/navigators/MainNavigator";
 import { User } from "./src/contexts/User";
+import useAuth from './src/hooks/useAuth';
+import useHelper from './src/hooks/useHelper';
 
-
-const APP_NAME = "chitchat"
-const ACTIONS = {
-	ADD_USER: "add_user",
-	REMOVE_USER: "remove_user",
-};
 
 const Root = createStackNavigator();
-const gun = Gun({
-  peers: ['https://marda.herokuapp.com'],
-});
-
 
 const App = () => {
 	
-  const [state, dispatch] = useReducer(
-		(state, action) => {
-			switch (action.type) {
-				case ACTIONS.ADD_USER:
-					return { ...state, user: { ...action.payload } };
-				case ACTIONS.REMOVE_USER:
-					return { ...state, user: undefined };
-			}
-		},
-		{ user: undefined }
-	);
-
-	const sleep = (milliseconds) => {
-		return new Promise(resolve => setTimeout(resolve, milliseconds))
-	  }
-	  
-
-	const createAccount = async (username) => {
-		
-		await SEA.pair().then((key) => {
-			gun.get("#").get("chitchat/profile").put({username:username, pub: key.pub, status: 'active'});
-			loginUser(key);
-		});
-	};
-	
-
-	const getUsername = () => {
-		return new Promise((resolve, reject) => {
-			gun.user().get({"*": "chitchat/profile"}).once((res) => {
-				if (res) {
-					resolve(res);
-				}
-				reject()
-			});
-		}); 	
-	};
-
-	const loginUser = async (keypair) => {
-
-		gun.user().auth(keypair);
-		gun.get("#").get("chitchat/profile").once(data => {
-			gun.back().once((k) => {console.log(k)})
-			console.log(data)
-			const user = { username: data.username, keypair: keypair };
-			dispatch({
-				type: ACTIONS.ADD_USER,
-				payload: user,
-			});
-			AsyncStorage.setItem("user", JSON.stringify(user));
-		})
-
-	
-		
-
-		
-		
-	};
-
-	const logout = () => {
-		gun.user().leave();
-		AsyncStorage.removeItem("user");
-		dispatch({ type: ACTIONS.REMOVE_USER });
-	};
-
-
-	const addFriend = (pub) => {
-		gun.user(`${pub}`).map().on(d => {console.log(d)})
-		
-
-	};
-
-	const auth = useMemo(() => ({
-		createAccount: createAccount,
-
-		loginUser: loginUser,
-
-		logout: logout,
-	}));
-
-	const userActions = useMemo(() => ({
-		addFriend: addFriend
-	}))
+	const {auth, state, app, user, gun} = useAuth();
+	const {actions} = useHelper();
 
 	useEffect(() => {
 		
 		AsyncStorage.getItem("user").then((user) => {
+			console.log("ASYNCSTORAGE: ", user)
 			if (user) {
 				dispatch({ type: ACTIONS.ADD_USER, payload: JSON.parse(user) });
 			}
@@ -133,7 +44,7 @@ const App = () => {
 					{state.user ? (
 						<Root.Screen name={"Main"}>
 							{() => (
-								<User.Provider value={{user: state.user, userActions}}>
+								<User.Provider value={{user: state.user, actions: actions}}>
 										<MainNavigator></MainNavigator>
 								</User.Provider>
 							)}

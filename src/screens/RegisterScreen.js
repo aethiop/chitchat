@@ -11,9 +11,9 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 
 const RegisterScreen = ({ navigation }) => {
-	const { createAccount, loginUser } = useContext(Authentication);
+	const { register } = useContext(Authentication);
 	const [username, setUsername] = useState("");
-	// const [password, setPassword] = useState("");
+	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	return (
 		<AuthContainer>
@@ -23,15 +23,18 @@ const RegisterScreen = ({ navigation }) => {
 				onChangeText={(text) => setUsername(text)}
 				placeholder={"Type your username..."}
 			/>
+			
 			{/* <Input
 				onChangeText={(text) => setPassword(text)}
 				placeholder={"Type your password..."}
 				secureTextEntry
 			/> */}
+			<Error>{error}</Error>
+
 			<FilledButton
 				onPress={() => {
 					try {
-					    createAccount(username);
+					    register(username);
 					} catch (e) {
 						setError(e);
 					}
@@ -39,7 +42,6 @@ const RegisterScreen = ({ navigation }) => {
 			>
 				Register
 			</FilledButton>
-			<Error>{error}</Error>
 
 			<TextButton
 				onPress={() => {

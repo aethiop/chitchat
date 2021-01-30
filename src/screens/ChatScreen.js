@@ -26,19 +26,23 @@ const ChatScreen = ({ navigation }) => {
 
 	const addFriend = () => {
 		setLoading(true);
+		app.put(null)
 		console.log("LOADING")	
-		app.get("profiles").map(user => user.username === query ? user: undefined).once(async ack => {
+		app.get("users").map(user => user.username === query ? user: undefined).once(async ack => {
 
 			const taggedUsername = ack.username;
 			const pub = ack.pub;
 			var username = ""
 			setFriends([...friends,[taggedUsername, pub]])
 			gun.user(pub).get("profile").get("username").on(ack => {
-				console.log("FOUND BY KEY: ", ack)
 				username += ack;
 			})
 
-			sendRequest(pub, userTagged)
+			sendRequest(pub, taggedUsername)
+			// app.get("#friendRequests").get({".": {"*": pub}}).map().once(data => {
+			// 	console.log("FROM EFFECT: ", data);
+				
+			// })
 
 
 			// sendRequest(ack.pub);
@@ -46,20 +50,28 @@ const ChatScreen = ({ navigation }) => {
 		console.log("USER COULD NOT BE FOUND")
 
 		setLoading(false);
-		console.log(friends)
 	}
 
 	const sendRequest = async (pub, userTagged) => {
 		var certificate = await SEA.certify([pub], [{"*": "chats/inbox", "+": "*"}], user.keyPair, null, {blacklist: 'blacklist'});
-		console.log(certificate);
-		const friend = gun.get(pub).put({username: userTagged, pub: pub});
-		me.get("friends").set(friend).once(async (data, key) => {
-			console.log("DATA: ", data)
-			let hash = await SEA.work(key, null, null, {name: 'SHA-256'});
+		
+		app.get("users").map(user => user.pub === pub ? user: undefined).once(async (_, k) => {
+			var key = ""
+			app.get("users").get(k).get("certificates").set(JSON.stringify(certificate)).once((_,k) => {key += k});
+			gun.user(`@${pub}`).get("friends").put(key);
+		})
+		
 
-			app.get("#friendRequests").get(`${pub}#${hash}`).put(key);
 
-		});
+
+		
+		// me.get("friends").set(friend).on(async (data, key) => {
+		// 	console.log(data)
+		// 	console.log(key)
+		// 	console.log(hash)
+		// 	// app.get("#friendRequests").get(`${pub}#${hash}`).put(key);
+
+		// });
 	}
 
 
@@ -79,14 +91,18 @@ const ChatScreen = ({ navigation }) => {
 		// })
 
 	useEffect(() => {
-		app.get("#friendRequests").get({".": {"*": user.keyPair.pub}}).map().once(data => {
-			console.log(data);
+		// console.log(`${user.keyPair.pub}`)
+		// app.get("#friendRequests").map(request => request.pub.includes(user.keyPair.pub) ? request: undefined).on(ack => {
+		// 	console.log("BELOW")
+		// 	console.log(ack)
+		// })
+		me.get('friends').map().on(d => {
+			console.log("HERE: ",d);
 		})
 	})
 
 
 	const renderFriend = ({item}) => {
-		console.log(item)
 		return <Card style={styles.friend}>{item[0]}</Card>
 	}
 

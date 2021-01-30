@@ -25,15 +25,7 @@ const App = () => {
 	const {auth, state, app, user, gun} = useAuth();
 	const {actions} = useHelper();
 
-	useEffect(() => {
-		
-		AsyncStorage.getItem("user").then((user) => {
-			console.log("ASYNCSTORAGE: ", user)
-			if (user) {
-				dispatch({ type: ACTIONS.ADD_USER, payload: JSON.parse(user) });
-			}
-		});
-	});
+	
 
 
 	return (

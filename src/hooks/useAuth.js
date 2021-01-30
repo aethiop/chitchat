@@ -42,17 +42,21 @@ const useAuth = () => {
 
 			var userTagged = tagUser(name);
 				
-			app.get("profiles").map().once(data => {
+			app.get("users").map().once(data => {
 				if (!created && (userTagged === data.username)) {
 					userTagged = tagUser(name);
 				}
 			});
-			app.get("profiles").set({pub: key.pub, username: userTagged});
+			
+			app.get("users").set({pub: key.pub, username: userTagged}).once(console.log);
 
+			app.get("users").map().on(console.log)
 
 
 			me.get("profile").get("username").put(name);
 			me.get("profile").get("usernameTag").put(userTagged.slice(-4));
+
+			me.get("profile").once(console.log)
 
 			created=true;
 			console.log(userTagged)
@@ -66,6 +70,7 @@ const useAuth = () => {
 		if (me.is) {
 			me.get("profile").get("username").on(username=> {
 				dispatch({type: ACTIONS.ADD_USER, payload: {username: username, keyPair: key}});
+				AsyncStorage.setItem("user", JSON.stringify({username: username, keyPair: key}))
 			});
 		}
 	};
@@ -85,7 +90,15 @@ const useAuth = () => {
 		login: login,
 
 		logout: logout,
-    }));
+	}));
+	useEffect(() => {
+		
+		AsyncStorage.getItem("user").then((user) => {
+			if (!state && user) {
+				dispatch({ type: ACTIONS.ADD_USER, payload: JSON.parse(user) });
+			}
+		});
+	});
     
     return {auth, state, app, me, gun};
 }

@@ -18,6 +18,8 @@ const ChatScreen = ({ navigation }) => {
 	const { logout } = useContext(Authentication);
 	const [loading, setLoading] = useState(false);
 	const [friends, setFriends] = useState([])
+
+	
 	// const {username, keyPair} = user;
 	const [query, setQuery] = useState('');
 
@@ -26,18 +28,13 @@ const ChatScreen = ({ navigation }) => {
 
 	const addFriend = () => {
 		setLoading(true);
-		app.put(null)
 		console.log("LOADING")	
 		app.get("users").map(user => user.username === query ? user: undefined).once(async ack => {
 
 			const taggedUsername = ack.username;
 			const pub = ack.pub;
-			var username = ""
-			setFriends([...friends,[taggedUsername, pub]])
-			gun.user(pub).get("profile").get("username").on(ack => {
-				username += ack;
-			})
-
+			const username = taggedUsername.slice(0, -5);
+			setFriends([...friends,[username, pub]]);
 			sendRequest(pub, taggedUsername)
 			// app.get("#friendRequests").get({".": {"*": pub}}).map().once(data => {
 			// 	console.log("FROM EFFECT: ", data);
@@ -52,19 +49,14 @@ const ChatScreen = ({ navigation }) => {
 		setLoading(false);
 	}
 
-	const sendRequest = async (pub, userTagged) => {
+	const sendRequest = async (pub, username) => {
 		var certificate = await SEA.certify([pub], [{"*": "chats/inbox", "+": "*"}], user.keyPair, null, {blacklist: 'blacklist'});
-		
-		app.get("users").map(user => user.pub === pub ? user: undefined).once(async (_, k) => {
-			var key = ""
-			app.get("users").get(k).get("certificates").set(JSON.stringify(certificate)).once((_,k) => {key += k});
-			gun.user(`@${pub}`).get("friends").put(key);
-		})
-		
+		me.get("friends").set({username: username, pub: pub, myCert: JSON.stringify(certificate), theirCert: null });
+		app.get("users").map(u => u.pub === user.keyPair.pub ? u: undefined).once((_, key) => {
+			gun.user(`@${pub}`).get("requests").get(user.keyPair.pub).put(key);
+			console.log("KEY FOUND: ", key);
+		});
 
-
-
-		
 		// me.get("friends").set(friend).on(async (data, key) => {
 		// 	console.log(data)
 		// 	console.log(key)
@@ -96,9 +88,8 @@ const ChatScreen = ({ navigation }) => {
 		// 	console.log("BELOW")
 		// 	console.log(ack)
 		// })
-		me.get('friends').map().on(d => {
-			console.log("HERE: ",d);
-		})
+		console.log("REQ")
+		me.get("requests").map().on(d => {console.log("REQUEST: ", d)})
 	})
 
 

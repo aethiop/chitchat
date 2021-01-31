@@ -2,6 +2,7 @@ import React, {useMemo, useReducer, useState, useEffect} from 'react';
 import useGun from './useGun';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'react-test-renderer';
+import Gun from 'gun/gun';
 
 
 
@@ -47,19 +48,11 @@ const useAuth = () => {
 					userTagged = tagUser(name);
 				}
 			});
-			
-			app.get("users").set({pub: key.pub, username: userTagged}).once(console.log);
+			console.log("SETTING UP USERS")
+			app.get("users").set({pub: key.pub, username: userTagged});
+			console.log("SETTING -> PROFILE WITH {USERNAME, DATE CREATED}")
+			me.get("profile").put({username: userTagged, dateCreated: new Date().toUTCString()})
 
-			app.get("users").map().on(console.log)
-
-
-			me.get("profile").get("username").put(name);
-			me.get("profile").get("usernameTag").put(userTagged.slice(-4));
-
-			me.get("profile").once(console.log)
-
-			created=true;
-			console.log(userTagged)
 		})
 	};
 
@@ -68,7 +61,10 @@ const useAuth = () => {
 	const login = (key) => {
 		me.auth(key);
 		if (me.is) {
+
+			console.log("PROFILE AUTHENTICATED")
 			me.get("profile").get("username").on(username=> {
+				console.log("PROFILE FOUND:", username)
 				dispatch({type: ACTIONS.ADD_USER, payload: {username: username, keyPair: key}});
 				AsyncStorage.setItem("user", JSON.stringify({username: username, keyPair: key}))
 			});
@@ -77,6 +73,7 @@ const useAuth = () => {
 
 	//Logout
 	const logout = () => {
+		console.log("REMOVED USER AND LOGGED OUT")
 		dispatch({ type: ACTIONS.REMOVE_USER });
 		AsyncStorage.removeItem("user");
 		me.leave();
@@ -94,7 +91,7 @@ const useAuth = () => {
 	useEffect(() => {
 		
 		AsyncStorage.getItem("user").then((user) => {
-			if (!state && user) {
+			if (!state.user && user) {
 				dispatch({ type: ACTIONS.ADD_USER, payload: JSON.parse(user) });
 			}
 		});

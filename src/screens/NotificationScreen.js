@@ -24,11 +24,10 @@ const NotificationScreen = ({ navigation }) => {
 
 	useEffect(() => {
 		gun.get("@"+user.keyPair.pub).get("requests").map().once(ack => {
-			console.log("CHANGED")
 
-			console.log("KE: ", ack)
+			console.log("KEY: ", ack)
 			app.get("users").get(ack).once(data => {
-
+				console.log("FRIEND REQUEST FROM: ", data);
 			})
 		}, [])
 	})

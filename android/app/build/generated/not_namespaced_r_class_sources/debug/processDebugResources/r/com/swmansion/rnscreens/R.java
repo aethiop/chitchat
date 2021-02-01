@@ -56,6 +56,10 @@ public final class R {
         public static final int mtrl_bottom_sheet_slide_in = 0x7f010029;
         public static final int mtrl_bottom_sheet_slide_out = 0x7f01002a;
         public static final int mtrl_card_lowers_interpolator = 0x7f01002b;
+        public static final int rns_slide_in_from_left = 0x7f01002c;
+        public static final int rns_slide_in_from_right = 0x7f01002d;
+        public static final int rns_slide_out_to_left = 0x7f01002e;
+        public static final int rns_slide_out_to_right = 0x7f01002f;
     }
     public static final class animator {
         private animator() {}

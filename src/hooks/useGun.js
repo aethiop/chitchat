@@ -8,14 +8,15 @@ import 'gun/lib/promise';
 import 'gun/lib/radix.js';
 import 'gun/lib/radisk.js';
 import 'gun/lib/store.js';
-import asyncStore from 'gun/lib/ras.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Store from 'gun/lib/ras.js';
 
 
 const useGun = () => {
+    const store = Store({AsyncStorage})
     const gun = Gun({
-        peers: ['https://marda.herokuapp.com/gun', "http://192.168.0.106:8765/gun"],
-        store: asyncStore({AsyncStorage})
+        store, 
+        peers: ['https://marda.herokuapp.com/gun'],
       });
 	const app = gun.get("chitchat");
 	const me = gun.user();

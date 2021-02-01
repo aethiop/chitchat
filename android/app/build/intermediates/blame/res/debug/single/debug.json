@@ -268,6 +268,10 @@
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/1d8167761e05259f14272f916fac8200/res/layout/abc_activity_chooser_view.xml"
     },
     {
+        "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/anim_rns_slide_in_from_left.xml.flat",
+        "source": "/Users/aethiop/Desktop/Projects/chitchat/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug/anim/rns_slide_in_from_left.xml"
+    },
+    {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/1d8167761e05259f14272f916fac8200/res/color/switch_thumb_material_dark.xml"
     },
@@ -1248,6 +1252,10 @@
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/50f26678a08258ea9fb4359d4558a572/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
+        "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/anim_rns_slide_out_to_right.xml.flat",
+        "source": "/Users/aethiop/Desktop/Projects/chitchat/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug/anim/rns_slide_out_to_right.xml"
+    },
+    {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/1d8167761e05259f14272f916fac8200/res/color/abc_background_cache_hint_selector_material_light.xml"
     },
@@ -1402,6 +1410,10 @@
     {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/1d8167761e05259f14272f916fac8200/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/anim_rns_slide_in_from_right.xml.flat",
+        "source": "/Users/aethiop/Desktop/Projects/chitchat/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug/anim/rns_slide_in_from_right.xml"
     },
     {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -1754,6 +1766,10 @@
     {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/layout-v26_mtrl_calendar_month.xml.flat",
         "source": "/Users/aethiop/.gradle/caches/transforms-2/files-2.1/082ced4354309b607249d3ca946d2421/res/layout-v26/mtrl_calendar_month.xml"
+    },
+    {
+        "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/anim_rns_slide_out_to_left.xml.flat",
+        "source": "/Users/aethiop/Desktop/Projects/chitchat/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug/anim/rns_slide_out_to_left.xml"
     },
     {
         "merged": "/Users/aethiop/Desktop/Projects/chitchat/android/app/build/intermediates/res/merged/debug/interpolator_mtrl_fast_out_linear_in.xml.flat",

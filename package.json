@@ -18,7 +18,7 @@
     "@react-navigation/native": "*",
     "@react-navigation/stack": "*",
     "buffer": "*",
-    "gun": "*",
+    "gun": "git+https://github.com/amark/gun.git#master",
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": "*",

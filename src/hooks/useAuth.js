@@ -49,7 +49,7 @@ const useAuth = () => {
 				}
 			});
 			console.log("SETTING UP USERS")
-			app.get("users").set({pub: key.pub, username: userTagged});
+			app.get("users").set({pub: key.pub, username: userTagged, epub: key.epub});
 			console.log("SETTING -> PROFILE WITH {USERNAME, DATE CREATED}")
 			me.get("profile").put({username: userTagged, dateCreated: new Date().toUTCString()})
 
@@ -60,6 +60,7 @@ const useAuth = () => {
 	//Login using key
 	const login = (key) => {
 		me.auth(key);
+
 		if (me.is) {
 
 			console.log("PROFILE AUTHENTICATED")
